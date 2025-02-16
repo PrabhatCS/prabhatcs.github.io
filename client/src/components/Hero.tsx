@@ -115,6 +115,11 @@ export default function Hero() {
                   src="/_MG_8333-removebg-preview.png"
                   alt="Prabhat Chandra Shukla"
                   className="w-full h-full object-cover rounded-full transform transition-transform hover:scale-105 duration-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null; // Prevent infinite loop
+                    target.src = '/img/fallback-profile.png';
+                  }}
                 />
               </div>
 
