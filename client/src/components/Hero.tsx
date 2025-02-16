@@ -9,7 +9,7 @@ export default function Hero() {
   const handleDownloadCV = () => {
     try {
       // Replace this with the actual path to your CV file once it's added to the public directory
-      const cvUrl = "/Prabhat_Chandra_Shukla_CV.pdf";
+      const cvUrl = "attached_assets\Prabhat_Data_Scientist_Dec.pdf";
 
       // First check if the CV exists
       fetch(cvUrl)
@@ -57,12 +57,12 @@ export default function Hero() {
           </h1>
           <div className="prose prose-lg dark:prose-invert mb-8">
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A seasoned Data Science professional with over 12 years of expertise in transforming complex data into actionable insights. 
-              Specializing in Machine Learning, NLP, and predictive modeling, I've successfully led numerous projects that bridge the gap 
+              A seasoned Data Science professional with over 12 years of expertise in transforming complex data into actionable insights.
+              Specializing in Machine Learning, NLP, and predictive modeling, I've successfully led numerous projects that bridge the gap
               between data and business value.
             </p>
             <p className="text-lg text-muted-foreground/80">
-              Currently focused on implementing cutting-edge AI solutions and 
+              Currently focused on implementing cutting-edge AI solutions and
               developing scalable machine learning models that drive business growth.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function Hero() {
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a 
+              <a
                 href="https://github.com/prabhatcs"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -113,12 +113,12 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay" />
                 <img
                   src="/_MG_8333-removebg-preview.png"
-                  alt="Prabhat Chandra Shukla"
+                  alt="Prabhat Shukla"
                   className="w-full h-full object-cover rounded-full transform transition-transform hover:scale-105 duration-500"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null; // Prevent infinite loop
-                    target.src = '/img/fallback-profile.png';
+                    target.src = '/_MG_8333-removebg-preview.png';
                   }}
                 />
               </div>
