@@ -5,10 +5,11 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Prabhat Chandra Shukla | Portfolio";
+    document.title = "Prabhat Chandra Shukla | Data Science Professional";
   }, []);
 
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Projects />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
