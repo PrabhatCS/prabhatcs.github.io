@@ -9,7 +9,7 @@ export default function Hero() {
   const handleDownloadCV = () => {
     try {
       // Replace this with the actual path to your CV file once it's added to the public directory
-      const cvUrl = "attached_assets\Prabhat_Data_Scientist_Dec.pdf";
+      const cvUrl = "/attached_assets/Prabhat_Data_Scientist_Dec.pdf";
 
       // First check if the CV exists
       fetch(cvUrl)
