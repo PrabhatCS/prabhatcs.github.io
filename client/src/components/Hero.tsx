@@ -1,12 +1,39 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, FileDown } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Hero() {
+  const { toast } = useToast();
+
   const handleDownloadCV = () => {
-    // Replace with your CV file URL
-    const cvUrl = "path_to_your_cv.pdf";
-    window.open(cvUrl, '_blank');
+    try {
+      // Replace this with the actual path to your CV file once it's added to the public directory
+      const cvUrl = "/Prabhat_Chandra_Shukla_CV.pdf";
+
+      // First check if the CV exists
+      fetch(cvUrl)
+        .then(response => {
+          if (response.ok) {
+            window.open(cvUrl, '_blank');
+          } else {
+            throw new Error('CV file not found');
+          }
+        })
+        .catch(() => {
+          toast({
+            title: "CV Download Unavailable",
+            description: "The CV file is currently being updated. Please try again later or contact me directly.",
+            variant: "destructive",
+          });
+        });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an error downloading the CV. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

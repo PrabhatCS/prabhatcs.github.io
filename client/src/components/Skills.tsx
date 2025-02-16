@@ -22,6 +22,7 @@ const skills = {
     { name: "AWS", level: 75 },
     { name: "Power BI", level: 90 },
     { name: "Databricks", level: 85 },
+    { name: "Palantir Foundry", level: 88 },
   ],
 };
 
@@ -35,7 +36,7 @@ export default function Skills() {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl font-bold mb-8 text-center">Skills & Expertise</h2>
-        
+
         <Tabs defaultValue="Data Science" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-8">
             {Object.keys(skills).map((category) => (
