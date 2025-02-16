@@ -11,8 +11,8 @@ const experiences = [
     projects: [
       {
         name: "Automated Warranty Responsibility Code Assignment",
-        description: "Automatically assigning responsibility codes to warranty claims using BERT and LLM",
-        tech: ["Random Forest", "BERT", "LLM", "vLLM"],
+        description: "Automatically assigning responsibility codes to warranty claims using BERT and advanced ML models",
+        tech: ["Random Forest", "BERT", "Machine Learning", "Python"],
       },
       {
         name: "Attachments Parts Forecasting",

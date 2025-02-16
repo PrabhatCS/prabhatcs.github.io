@@ -9,11 +9,6 @@ const projects = [
     tags: ["LLM", "DeereAI", "LongChain", "NLP"],
   },
   {
-    title: "vLLM Feedback Analyzer",
-    description: "Created an automated system for analyzing feedback transcripts",
-    tags: ["vLLM", "NLP", "Python"],
-  },
-  {
     title: "Knowledge Graph Platform",
     description: "Built a platform for analyzing unstructured text and creating knowledge graphs",
     tags: ["Neo4j", "NLP", "Spacy", "Flask"],
@@ -22,6 +17,11 @@ const projects = [
     title: "Chatbot Assistant",
     description: "Developed a conversational assistant with features like weather forecasting and news summary",
     tags: ["NLTK", "AIML", "ChatterBot", "Flask"],
+  },
+  {
+    title: "Cricket Prediction System",
+    description: "Developed analytics and prediction models for cricket player performance",
+    tags: ["R", "Python", "Machine Learning", "Data Analytics"],
   },
 ];
 
