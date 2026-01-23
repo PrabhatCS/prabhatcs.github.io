@@ -5,25 +5,25 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Rajesh Kumar",
-    role: "Project Manager, Yash Technologies",
-    content: "Prabhat's expertise in machine learning and data science has been instrumental in delivering high-impact projects. His ability to translate complex data into actionable insights is exceptional.",
+    name: "Michael Richey",
+    role: "Senior Business Intelligence Analyst at John Deere",
+    content: "I highly recommend Prabhat for his exceptional skills and collaborative nature. He is highly proficient in Power BI and Python, helping us build efficient data structures and reports. His ability to think through automation and machine learning pathways has helped drive significant innovation and efficiency in our processes.",
     rating: 5,
-    initials: "RK",
+    initials: "MR",
   },
   {
-    name: "Priya Sharma",
-    role: "CTO, Tech Innovations Ltd",
-    content: "Working with Prabhat on the NLP project was a game-changer. He brought innovative solutions and deep technical knowledge that exceeded our expectations.",
+    name: "Rahul Pandey",
+    role: "Technology Solution Architect at John Deere",
+    content: "Prabhat has been an excellent team member, known for his quick learning and ability to swiftly apply new skills to enhance business value. His analytics expertise and adeptness at managing global stakeholders are highly commendable. I highly recommend Prabhat for any role that requires strong analytical skills.",
     rating: 5,
-    initials: "PS",
+    initials: "RP",
   },
   {
-    name: "Amit Patel",
-    role: "VP Engineering, Accenture",
-    content: "Prabhat is a data scientist who doesn't just deliver results, but delivers insights that drive business strategy. Highly recommended for any AI/ML initiative.",
+    name: "Niraj Chaudhary",
+    role: "Associate Director - Solution Delivery & Operations at Novartis",
+    content: "Prabhat is a hard working and sincere data analyst who never shied away from putting in extra hours to ensure high quality deliveries. His skills as a programmer and constant effort to equip himself with better know-how made him an asset for our team. Most importantly, he lives and breathes data science. This passion really sets him apart.",
     rating: 5,
-    initials: "AP",
+    initials: "NC",
   },
 ];
 
