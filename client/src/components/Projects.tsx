@@ -44,16 +44,17 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}
             >
-              <Card className="h-full">
+              <Card className="h-full cursor-pointer transition-all duration-300 hover:border-primary/50">
                 <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
+                  <CardTitle className="group-hover:text-primary transition-colors">{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="secondary">
+                      <Badge key={tagIndex} variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
                         {tag}
                       </Badge>
                     ))}
