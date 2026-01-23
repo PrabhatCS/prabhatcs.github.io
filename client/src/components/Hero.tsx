@@ -52,13 +52,13 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
+        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8 lg:gap-12 items-start lg:items-center min-h-[calc(100vh-8rem)]">
+          {/* Left Content - 60% width */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
+            className="md:col-span-2 lg:col-span-2 space-y-8 py-8 lg:py-0"
           >
             {/* Badge */}
             <motion.div
@@ -154,17 +154,17 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Image - Enhanced */}
+          {/* Right Image - 40% width */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="hidden lg:flex justify-center items-center"
+            className="hidden md:flex md:col-span-1 justify-center items-start md:pt-8"
           >
-            <div className="relative w-full max-w-md aspect-square group">
+            <div className="relative w-full max-w-sm aspect-square group">
               {/* Glassmorphism Background */}
               <motion.div
-                className="absolute -inset-8 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+                className="absolute -inset-6 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"
                 animate={{
                   scale: [1, 1.05, 1],
                 }}
@@ -172,7 +172,7 @@ export default function Hero() {
               />
 
               {/* Image Container with Glass Effect */}
-              <div className="relative w-full h-full rounded-3xl overflow-hidden backdrop-blur-md bg-white/10 border border-white/20 shadow-2xl p-4 hover:shadow-primary/30 transition-all duration-500">
+              <div className="relative w-full h-full rounded-3xl overflow-hidden backdrop-blur-md bg-white/10 border border-white/20 shadow-2xl p-3 hover:shadow-primary/30 transition-all duration-500">
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/10" />
                 
@@ -196,10 +196,9 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.6 }}
-                className="absolute -bottom-8 -right-8 bg-gradient-to-br from-primary to-primary/70 rounded-full px-6 py-3 shadow-xl border border-white/20 backdrop-blur-md text-white font-bold text-center"
+                className="absolute -bottom-6 -right-6 bg-gradient-to-br from-primary to-primary/70 rounded-full px-5 py-2 shadow-xl border border-white/20 backdrop-blur-md text-white font-bold text-center text-xs sm:text-sm"
               >
-                <div className="text-sm">12+ Years</div>
-                <div className="text-xs opacity-90">Experience</div>
+                <div>12+ Years</div>
               </motion.div>
             </div>
           </motion.div>
