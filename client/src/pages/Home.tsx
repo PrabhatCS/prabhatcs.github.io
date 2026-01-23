@@ -5,7 +5,6 @@ import Stats from "../components/Stats";
 import Skills from "../components/Skills";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
-import Blog from "../components/Blog";
 import Certifications from "../components/Certifications";
 import GitHubContributions from "../components/GitHubContributions";
 import Testimonials from "../components/Testimonials";
@@ -26,7 +25,6 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
-        <Blog />
         <Certifications />
         <GitHubContributions />
         <Testimonials />
