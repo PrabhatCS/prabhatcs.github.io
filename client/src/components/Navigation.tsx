@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -9,11 +9,14 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Blog", href: "#blog" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +25,31 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Check system preference on mount
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+    
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (!isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -45,7 +73,7 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -61,45 +89,48 @@ export default function Navigation() {
               link.download = 'Prabhat_Shukla_Resume.pdf';
               link.click();
             }}>Download CV</Button>
-            <Button variant="outline" asChild>
-              <a href="https://calendly.com/prabhu3437/30min" target="_blank" rel="noopener noreferrer">
-                Book Meeting
-              </a>
+            <Button variant="outline" size="icon" onClick={toggleDarkMode} className="hover:bg-primary/10">
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
 
           {/* Mobile Navigation */}
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <div className="flex flex-col space-y-4 mt-8">
-                {navItems.map((item) => (
-                  <button
-                    key={item.href}
-                    onClick={() => scrollToSection(item.href)}
-                    className="text-lg text-foreground/70 hover:text-foreground transition-colors text-left"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-                <Button className="mt-4" onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/PrabhatDS_2026_.pdf';
-                  link.download = 'Prabhat_Shukla_Resume.pdf';
-                  link.click();
-                }}>Download CV</Button>
-                <Button className="mt-2" variant="outline" asChild>
-                  <a href="https://calendly.com/prabhu3437/30min" target="_blank" rel="noopener noreferrer">
-                    Book Meeting
-                  </a>
+          <div className="flex md:hidden items-center gap-2">
+            <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
                 </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetTrigger>
+              <SheetContent>
+                <div className="flex flex-col space-y-4 mt-8">
+                  {navItems.map((item) => (
+                    <button
+                      key={item.href}
+                      onClick={() => scrollToSection(item.href)}
+                      className="text-lg text-foreground/70 hover:text-foreground transition-colors text-left"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                  <Button className="mt-4" onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/PrabhatDS_2026_.pdf';
+                    link.download = 'Prabhat_Shukla_Resume.pdf';
+                    link.click();
+                  }}>Download CV</Button>
+                  <Button className="mt-2" variant="outline" asChild>
+                    <a href="https://calendly.com/prabhu3437/30min" target="_blank" rel="noopener noreferrer">
+                      Book Meeting
+                    </a>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </nav>
