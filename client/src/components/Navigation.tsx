@@ -32,13 +32,16 @@ export default function Navigation() {
     <nav
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-background/90 backdrop-blur-md shadow-md border-b border-primary/10" : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-2xl font-bold">
-            Prabhat CS
+          <a href="#" className="flex items-center space-x-2 group">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/70 rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/50 transition-all">
+              <span className="text-white font-bold text-lg">P</span>
+            </div>
+            <span className="text-xl font-bold hidden sm:inline">Prabhat Shukla</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -47,7 +50,7 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-primary transition-colors font-medium text-sm"
               >
                 {item.label}
               </button>

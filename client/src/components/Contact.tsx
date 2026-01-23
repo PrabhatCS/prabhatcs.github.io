@@ -53,12 +53,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16">
+    <section id="contact" className="py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
+        className="container mx-auto px-4"
       >
         <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
 

@@ -67,14 +67,15 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
 
 export default function Stats() {
   return (
-    <section className="py-16 bg-primary/5 rounded-lg">
+    <section className="py-24 bg-primary/5 border-y border-primary/10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
+        className="container mx-auto px-4"
       >
-        <h2 className="text-3xl font-bold mb-12 text-center">
+        <h2 className="text-3xl font-bold mb-16 text-center">
           <span className="bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
             By The Numbers
           </span>
@@ -88,10 +89,10 @@ export default function Stats() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center p-6"
             >
               <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              <p className="text-muted-foreground text-lg">{stat.label}</p>
+              <p className="text-muted-foreground text-lg mt-2">{stat.label}</p>
             </motion.div>
           ))}
         </div>

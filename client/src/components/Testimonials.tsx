@@ -29,12 +29,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-16">
+    <section id="testimonials" className="py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
+        className="container mx-auto px-4"
       >
         <h2 className="text-3xl font-bold mb-12 text-center">
           <span className="bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
