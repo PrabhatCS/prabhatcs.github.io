@@ -71,10 +71,10 @@ export default function Contact() {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
                 <a
-                  href="mailto:prabhu_shukla19@hotmail.com"
+                  href="mailto:prabhat.ds@outlook.in"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  prabhu_shukla19@hotmail.com
+                  prabhat.ds@outlook.in
                 </a>
               </div>
               <div className="flex items-center space-x-3">

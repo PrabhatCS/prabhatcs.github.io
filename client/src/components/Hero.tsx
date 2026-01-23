@@ -8,8 +8,8 @@ export default function Hero() {
 
   const handleDownloadCV = () => {
     try {
-      // Replace this with the actual path to your CV file once it's added to the public directory
-      const cvUrl = "/attached_assets/Prabhat_Data_Scientist_Dec.pdf";
+      // Updated CV path pointing to the latest resume
+      const cvUrl = "/attached_assets/PrabhatDS_2026_.pdf";
 
       // First check if the CV exists
       fetch(cvUrl)
@@ -57,13 +57,13 @@ export default function Hero() {
           </h1>
           <div className="prose prose-lg dark:prose-invert mb-8">
             <p className="text-xl text-muted-foreground leading-relaxed">
-              A seasoned Data Science professional with over 12 years of expertise in transforming complex data into actionable insights.
-              Specializing in Machine Learning, NLP, and predictive modeling, I've successfully led numerous projects that bridge the gap
-              between data and business value.
+              Lead Data Scientist & AI Architect with 12+ years of experience in Machine Learning, Generative AI, and enterprise-scale data solutions. 
+              Specialized in orchestrating Multi-Agent Systems (MCP & MoE), architecting production-grade MLOps, and delivering high-impact AI solutions 
+              that generate measurable business value—including a $55M+ warranty recovery system for Fortune 500 clients.
             </p>
             <p className="text-lg text-muted-foreground/80">
-              Currently focused on implementing cutting-edge AI solutions and
-              developing scalable machine learning models that drive business growth.
+              Expert in AWS, Databricks, Palantir Foundry, and modern AI frameworks. Passionate about bridging the gap between experimental R&D and 
+              production-ready systems that drive competitive advantage.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -130,7 +130,7 @@ export default function Hero() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="absolute -bottom-4 -right-4 bg-background rounded-full px-4 py-2 shadow-lg border border-primary/20"
               >
-                <span className="text-sm font-medium text-primary">Data Science Expert</span>
+                <span className="text-sm font-medium text-primary">Lead Data Scientist</span>
               </motion.div>
             </div>
           </div>

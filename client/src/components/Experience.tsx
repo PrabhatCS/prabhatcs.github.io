@@ -5,19 +5,39 @@ import { Badge } from "@/components/ui/badge";
 const experiences = [
   {
     company: "Yash Technologies Pvt Ltd",
-    role: "Sr. Data Scientist",
-    period: "Feb 2020 – Present",
-    location: "Indore",
+    role: "Lead Data Scientist | AI Architect",
+    period: "March 2020 – Present (6+ years)",
+    location: "Pune",
     projects: [
       {
-        name: "Automated Warranty Responsibility Code Assignment",
-        description: "Automatically assigning responsibility codes to warranty claims using BERT and advanced ML models",
-        tech: ["Random Forest", "BERT", "Machine Learning", "Python"],
+        name: "Agentic Translation Ecosystem (MCP & A2A)",
+        description: "Architected a multi-agent ecosystem on AWS utilizing Model Context Protocol (MCP) and Mixture of Experts (MoE) for optimized model routing. Implemented RAG-based memory agents and automated quality evaluation systems.",
+        tech: ["MCP", "Multi-Agent Systems", "AWS", "OpenSearch", "Vector DBs", "LLMs"],
       },
       {
-        name: "Attachments Parts Forecasting",
-        description: "Designed forecasting mechanism for attachments parts using time series analysis",
-        tech: ["Prophet", "ARIMA", "Holt-Winter", "Pandas", "Plotly"],
+        name: "LLM-Based Warranty Responsibility Code Assignment",
+        description: "Designed and deployed an LLM-driven solution to automatically assign responsibility codes to warranty claims. Analyzed complaint cause/correction text using GPT-4o and specialized models to predict supplier vs. manufacturer liability.",
+        tech: ["LLMs", "GPT-4o", "BERT", "Python", "ML Classification"],
+      },
+      {
+        name: "Machine Translation Quality Evaluation (MTQE)",
+        description: "Engineered an automated audit system using LLMs and Galileo for real-time quality assessment across five dimensions: fluency, accuracy, terminology, style, and local conventions.",
+        tech: ["LLMs", "Vector DBs", "Galileo", "Automated Evaluation"],
+      },
+      {
+        name: "Palantir Foundry Data Engineering & Analytics",
+        description: "Engineered high-scale ETL pipelines using PySpark to unify disparate extended warranty datasets. Implemented complex data enrichment logic for telematics and claim analysis.",
+        tech: ["Palantir Foundry", "PySpark", "ETL", "Data Engineering"],
+      },
+      {
+        name: "Attachments Parts Forecasting (Time Series)",
+        description: "Developed ML-driven forecasting framework using Prophet, ARIMA, and Holt-Winters models. Incorporated historical sales and base-coded attachments with RMSE/MAPE evaluation.",
+        tech: ["Prophet", "ARIMA", "Holt-Winters", "Time Series", "Python"],
+      },
+      {
+        name: "Enterprise Data Automation & Business Intelligence",
+        description: "Engineered end-to-end data pipelines in Databricks with automated Power BI dashboards. Eliminated 1,100+ manual hours annually across logistics and factory performance reporting.",
+        tech: ["Databricks", "Power BI", "PySpark", "ETL", "Automation"],
       },
     ],
   },
@@ -28,14 +48,24 @@ const experiences = [
     location: "Gurgaon",
     projects: [
       {
-        name: "Market Basket Analysis",
-        description: "Generated rules linking products using association rule mining",
-        tech: ["Python", "Apriori Algorithm", "Big Query"],
+        name: "GCP-Based ML Prototypes (Google Retail)",
+        description: "Architected and deployed end-to-end ML prototypes using Google Cloud Platform to solve high-priority business challenges for Google Retail.",
+        tech: ["GCP", "Python", "Machine Learning", "MLOps"],
       },
       {
-        name: "Email Sent Time Optimization",
-        description: "Predicted optimal email sending times to increase engagement",
+        name: "Market Basket Analysis",
+        description: "Applied Apriori algorithm to identify high-confidence purchasing patterns, optimizing cross-selling and product bundling strategies using Big Query.",
+        tech: ["Python", "Apriori Algorithm", "Big Query", "Analytics"],
+      },
+      {
+        name: "Email Send-Time Optimization",
+        description: "Developed regression models to predict optimal email dispatch times, maximizing click-through rates and campaign engagement.",
         tech: ["Logistic Regression", "Decision Tree", "Random Forest"],
+      },
+      {
+        name: "User Segmentation (PySpark K-means)",
+        description: "Leveraged PySpark K-means to segment millions of site visitors for highly targeted marketing and personalized UX.",
+        tech: ["PySpark", "K-means", "Clustering", "Data Analytics"],
       },
     ],
   },

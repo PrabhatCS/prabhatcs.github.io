@@ -4,24 +4,37 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
-    title: "LLM Based PDF Summarizer",
-    description: "Developed a PDF summarization tool using DeereAI and LongChain",
-    tags: ["LLM", "DeereAI", "LongChain", "NLP"],
+    title: "Agentic Translation Ecosystem (MCP & MoE)",
+    description: "Multi-agent ecosystem on AWS utilizing Model Context Protocol (MCP) and Mixture of Experts. Achieved 35% reduction in localization turnaround and 90% consistency in technical terminology.",
+    tags: ["MCP", "Multi-Agent Systems", "AWS", "LLMs", "RAG", "Vector DBs"],
+    impact: "$55M+ value recovered"
+  },
+  {
+    title: "LLM-Based Warranty Responsibility Assignment",
+    description: "Automated system using GPT-4o and BERT to assign responsibility codes to warranty claims, analyzing complaint cause/correction text for supplier vs. manufacturer liability prediction.",
+    tags: ["LLMs", "GPT-4o", "BERT", "Python", "Machine Learning"],
+    impact: "$55M+ recovered from claims"
+  },
+  {
+    title: "Machine Translation Quality Evaluation (MTQE)",
+    description: "Automated audit system using LLMs and Galileo for real-time quality assessment across fluency, accuracy, terminology, style, and local conventions with 20% manual effort reduction.",
+    tags: ["LLMs", "Vector DBs", "Galileo", "Automation"],
+    impact: "20% reduction in QA effort"
   },
   {
     title: "Knowledge Graph Platform",
-    description: "Built a platform for analyzing unstructured text and creating knowledge graphs",
-    tags: ["Neo4j", "NLP", "Spacy", "Flask"],
+    description: "NLP platform using Neo4j to visualize entity relationships, perform sentiment analysis, and extract insights from unstructured data.",
+    tags: ["Neo4j", "NLP", "Spacy", "Flask", "Graph Databases"],
   },
   {
-    title: "Chatbot Assistant",
-    description: "Developed a conversational assistant with features like weather forecasting and news summary",
-    tags: ["NLTK", "AIML", "ChatterBot", "Flask"],
+    title: "Time Series Forecasting & Analytics",
+    description: "ML-driven forecasting framework for inventory optimization using Prophet, ARIMA, and Holt-Winters models with high accuracy evaluation metrics.",
+    tags: ["Prophet", "ARIMA", "Time Series", "Forecasting", "Python"],
   },
   {
-    title: "Cricket Prediction System",
-    description: "Developed analytics and prediction models for cricket player performance",
-    tags: ["R", "Python", "Machine Learning", "Data Analytics"],
+    title: "Conversational AI Chatbot",
+    description: "REST API-based chatbot with NER (Named Entity Recognition), weather forecasting, and news summarization capabilities.",
+    tags: ["NLTK", "NER", "ChatterBot", "Flask", "Python"],
   },
 ];
 

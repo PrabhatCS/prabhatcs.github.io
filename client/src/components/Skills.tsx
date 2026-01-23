@@ -4,28 +4,37 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const skills = {
-  "Data Science": [
-    { name: "Machine Learning", level: 95 },
-    { name: "Generative AI", level: 92 },
-    { name: "Agentic AI", level: 88 },
-    { name: "Natural Language Processing", level: 90 },
-    { name: "Deep Learning", level: 85 },
-    { name: "Data Visualization", level: 90 },
-    { name: "Predictive Modeling", level: 92 },
+  "AI & ML Frameworks": [
+    { name: "Generative AI & LLMs", level: 95 },
+    { name: "Agentic Workflows (MCP, A2A)", level: 92 },
+    { name: "Multi-Agent Systems (MoE)", level: 90 },
+    { name: "RAG & Vector DBs", level: 88 },
+    { name: "Machine Learning & Deep Learning", level: 95 },
+    { name: "NLP & Named Entity Recognition", level: 90 },
+    { name: "Time Series Analysis (Prophet, ARIMA)", level: 85 },
   ],
-  "Programming": [
+  "Programming & Data": [
     { name: "Python", level: 95 },
-    { name: "PySpark", level: 85 },
-    { name: "R", level: 80 },
+    { name: "PySpark & Spark SQL", level: 90 },
     { name: "SQL", level: 90 },
+    { name: "R", level: 80 },
+    { name: "Neo4j & Graph DBs", level: 85 },
+    { name: "Git & GitHub", level: 88 },
   ],
-  "Cloud & Tools": [
-    { name: "Google Cloud", level: 85 },
-    { name: "Azure", level: 80 },
-    { name: "AWS", level: 75 },
+  "Cloud, MLOps & Platforms": [
+    { name: "AWS (EC2, S3, Lambda, CaaS)", level: 88 },
+    { name: "Databricks & Delta Lake", level: 90 },
+    { name: "Palantir Foundry & AIP", level: 88 },
+    { name: "C3.ai", level: 82 },
+    { name: "Google Cloud Platform", level: 85 },
+    { name: "Docker & Kubernetes", level: 85 },
+    { name: "CI/CD & GitHub Actions", level: 85 },
+  ],
+  "Data Visualization & BI": [
     { name: "Power BI", level: 90 },
-    { name: "Databricks", level: 85 },
-    { name: "Palantir Foundry", level: 88 },
+    { name: "Tableau", level: 85 },
+    { name: "Streamlit & Plotly/Dash", level: 88 },
+    { name: "Matplotlib & Seaborn", level: 85 },
   ],
 };
 
@@ -45,8 +54,8 @@ export default function Skills() {
           </span>
         </h2>
 
-        <Tabs defaultValue="Data Science" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
+        <Tabs defaultValue="AI & ML Frameworks" className="w-full">
+          <TabsList className="grid w-full grid-cols-4 mb-8">
             {Object.keys(skills).map((category) => (
               <TabsTrigger key={category} value={category}
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
