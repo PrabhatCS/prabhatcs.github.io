@@ -61,6 +61,11 @@ export default function Navigation() {
               link.download = 'Prabhat_Shukla_Resume.pdf';
               link.click();
             }}>Download CV</Button>
+            <Button variant="outline" asChild>
+              <a href="https://calendly.com/prabhu3437/30min" target="_blank" rel="noopener noreferrer">
+                Book Meeting
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -87,6 +92,11 @@ export default function Navigation() {
                   link.download = 'Prabhat_Shukla_Resume.pdf';
                   link.click();
                 }}>Download CV</Button>
+                <Button className="mt-2" variant="outline" asChild>
+                  <a href="https://calendly.com/prabhu3437/30min" target="_blank" rel="noopener noreferrer">
+                    Book Meeting
+                  </a>
+                </Button>
               </div>
             </SheetContent>
           </Sheet>
