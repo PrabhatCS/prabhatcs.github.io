@@ -9,7 +9,7 @@ export default function Hero() {
   const handleDownloadCV = () => {
     try {
       // Updated CV path pointing to the latest resume
-      const cvUrl = "/attached_assets/PrabhatDS_2026_.pdf";
+      const cvUrl = "/PrabhatDS_2026_.pdf";
 
       // First check if the CV exists
       fetch(cvUrl)

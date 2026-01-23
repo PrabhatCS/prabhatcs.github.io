@@ -55,7 +55,12 @@ export default function Navigation() {
                 {item.label}
               </button>
             ))}
-            <Button>Download CV</Button>
+            <Button onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/PrabhatDS_2026_.pdf';
+              link.download = 'Prabhat_Shukla_Resume.pdf';
+              link.click();
+            }}>Download CV</Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -76,7 +81,12 @@ export default function Navigation() {
                     {item.label}
                   </button>
                 ))}
-                <Button className="mt-4">Download CV</Button>
+                <Button className="mt-4" onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/PrabhatDS_2026_.pdf';
+                  link.download = 'Prabhat_Shukla_Resume.pdf';
+                  link.click();
+                }}>Download CV</Button>
               </div>
             </SheetContent>
           </Sheet>
