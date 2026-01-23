@@ -129,15 +129,6 @@ export default function Hero() {
                     Get In Touch
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/PrabhatDS_2026_.pdf';
-                  link.download = 'Prabhat_Shukla_Resume.pdf';
-                  link.click();
-                }} className="group border-2 hover:bg-primary/5">
-                  <FileDown className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Download Resume
-                </Button>
                 <Button size="lg" asChild className="group bg-primary/10 hover:bg-primary/20 border border-primary/30">
                   <a href="https://calendly.com/prabhu3437/30min" target="_blank" rel="noopener noreferrer">
                     <svg className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
