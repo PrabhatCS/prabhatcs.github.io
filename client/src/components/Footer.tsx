@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import ViewCounter from "./ViewCounter";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left mb-4 md:mb-0">
             <h3 className="font-bold text-lg">Prabhat Shukla</h3>
-            <p className="text-muted-foreground">Data Science Professional</p>
+            <p className="text-muted-foreground">Lead Data Scientist & AI Architect</p>
           </div>
           
           <div className="flex space-x-6">
@@ -28,14 +29,15 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:prabhu_shukla19@hotmail.com"
+              href="mailto:prabhat.ds@outlook.in"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Mail className="h-5 w-5" />
             </a>
           </div>
           
-          <div className="text-center md:text-right mt-4 md:mt-0">
+          <div className="text-center md:text-right mt-4 md:mt-0 space-y-2">
+            <ViewCounter />
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} All rights reserved
             </p>
