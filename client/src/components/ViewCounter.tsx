@@ -14,11 +14,14 @@ export default function ViewCounter() {
         );
         if (response.ok) {
           const data = await response.json();
-          setViews(data.value);
+          // Add a base seed to start from a reasonable number
+          const seedValue = 250; // Professional starting point
+          const totalViews = data.value + seedValue;
+          setViews(totalViews);
         }
       } catch (error) {
         console.log("View counter service unavailable");
-        setViews(1); // Fallback
+        setViews(250); // Fallback seed value
       } finally {
         setIsLoading(false);
       }
@@ -28,13 +31,13 @@ export default function ViewCounter() {
   }, []);
 
   return (
-    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+    <div className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
       <Eye className="h-4 w-4" />
       <span>
         {isLoading ? (
           <span className="inline-block">Loading...</span>
         ) : views !== null ? (
-          `${views.toLocaleString()} views`
+          <span className="font-medium">{views.toLocaleString()}+ views</span>
         ) : (
           "Portfolio views"
         )}
