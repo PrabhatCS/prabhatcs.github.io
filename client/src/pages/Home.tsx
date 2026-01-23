@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Prabhat Chandra Shukla | Data Science Professional";
+    document.title = "Prabhat Shukla | Data Science Professional";
   }, []);
 
   return (

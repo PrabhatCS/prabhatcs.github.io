@@ -61,10 +61,15 @@ export default function Projects() {
             >
               <Card className="h-full cursor-pointer transition-all duration-300 hover:border-primary/50">
                 <CardHeader>
-                  <CardTitle className="group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                  <CardTitle>{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
+                  {project.impact && (
+                    <div className="mb-4 p-2 bg-primary/10 rounded border-l-2 border-primary">
+                      <p className="text-sm font-medium text-primary">{project.impact}</p>
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge key={tagIndex} variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors duration-300">

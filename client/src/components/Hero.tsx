@@ -52,7 +52,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
-              Prabhat Chandra Shukla
+              Prabhat Shukla
             </span>
           </h1>
           <div className="prose prose-lg dark:prose-invert mb-8">
