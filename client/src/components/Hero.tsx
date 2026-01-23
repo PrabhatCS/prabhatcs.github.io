@@ -112,13 +112,13 @@ export default function Hero() {
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay" />
                 <img
-                  src="/_MG_8333-removebg-preview.png"
+                  src="/img/_MG_8333-removebg-preview.png"
                   alt="Prabhat Shukla"
                   className="w-full h-full object-cover rounded-full transform transition-transform hover:scale-105 duration-500"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null; // Prevent infinite loop
-                    target.src = '/_MG_8333-removebg-preview.png';
+                    target.src = '/img/_MG_8333-removebg-preview.png';
                   }}
                 />
               </div>
