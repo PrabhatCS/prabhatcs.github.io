@@ -2,39 +2,86 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { 
+  Zap, 
+  Brain, 
+  MessageSquare, 
+  TrendingUp, 
+  Code, 
+  Cpu, 
+  Database, 
+  GitBranch, 
+  Cloud, 
+  Flame, 
+  Shield, 
+  Target, 
+  Globe, 
+  Container, 
+  Rocket, 
+  BarChart3, 
+  Palette, 
+  Settings 
+} from "lucide-react";
+
+const skillIcons: Record<string, any> = {
+  "Generative AI & LLMs": Brain,
+  "Agentic Workflows (MCP, A2A)": Zap,
+  "Multi-Agent Systems (MoE)": Cpu,
+  "RAG & Vector DBs": Database,
+  "Machine Learning & Deep Learning": Brain,
+  "NLP & Named Entity Recognition": MessageSquare,
+  "Time Series Analysis (Prophet, ARIMA)": TrendingUp,
+  "Python": Code,
+  "PySpark & Spark SQL": Zap,
+  "SQL": Database,
+  "R": Code,
+  "Neo4j & Graph DBs": Cpu,
+  "Git & GitHub": GitBranch,
+  "AWS (EC2, S3, Lambda, CaaS)": Cloud,
+  "Databricks & Delta Lake": Flame,
+  "Palantir Foundry & AIP": Shield,
+  "C3.ai": Target,
+  "Google Cloud Platform": Globe,
+  "Docker & Kubernetes": Container,
+  "CI/CD & GitHub Actions": Rocket,
+  "Power BI": BarChart3,
+  "Tableau": Palette,
+  "Streamlit & Plotly/Dash": Settings,
+  "Matplotlib & Seaborn": Palette,
+};
 
 const skills = {
   "AI & ML Frameworks": [
-    { name: "Generative AI & LLMs", level: 95, icon: "🤖" },
-    { name: "Agentic Workflows (MCP, A2A)", level: 92, icon: "🔄" },
-    { name: "Multi-Agent Systems (MoE)", level: 90, icon: "👥" },
-    { name: "RAG & Vector DBs", level: 88, icon: "🔍" },
-    { name: "Machine Learning & Deep Learning", level: 95, icon: "🧠" },
-    { name: "NLP & Named Entity Recognition", level: 90, icon: "📝" },
-    { name: "Time Series Analysis (Prophet, ARIMA)", level: 85, icon: "📈" },
+    { name: "Generative AI & LLMs", level: 95 },
+    { name: "Agentic Workflows (MCP, A2A)", level: 92 },
+    { name: "Multi-Agent Systems (MoE)", level: 90 },
+    { name: "RAG & Vector DBs", level: 88 },
+    { name: "Machine Learning & Deep Learning", level: 95 },
+    { name: "NLP & Named Entity Recognition", level: 90 },
+    { name: "Time Series Analysis (Prophet, ARIMA)", level: 85 },
   ],
   "Programming & Data": [
-    { name: "Python", level: 95, icon: "🐍" },
-    { name: "PySpark & Spark SQL", level: 90, icon: "⚡" },
-    { name: "SQL", level: 90, icon: "🗄️" },
-    { name: "R", level: 80, icon: "📊" },
-    { name: "Neo4j & Graph DBs", level: 85, icon: "🕸️" },
-    { name: "Git & GitHub", level: 88, icon: "🔗" },
+    { name: "Python", level: 95 },
+    { name: "PySpark & Spark SQL", level: 90 },
+    { name: "SQL", level: 90 },
+    { name: "R", level: 80 },
+    { name: "Neo4j & Graph DBs", level: 85 },
+    { name: "Git & GitHub", level: 88 },
   ],
   "Cloud, MLOps & Platforms": [
-    { name: "AWS (EC2, S3, Lambda, CaaS)", level: 88, icon: "☁️" },
-    { name: "Databricks & Delta Lake", level: 90, icon: "🔥" },
-    { name: "Palantir Foundry & AIP", level: 88, icon: "🛡️" },
-    { name: "C3.ai", level: 82, icon: "🎯" },
-    { name: "Google Cloud Platform", level: 85, icon: "🌐" },
-    { name: "Docker & Kubernetes", level: 85, icon: "🐳" },
-    { name: "CI/CD & GitHub Actions", level: 85, icon: "🚀" },
+    { name: "AWS (EC2, S3, Lambda, CaaS)", level: 88 },
+    { name: "Databricks & Delta Lake", level: 90 },
+    { name: "Palantir Foundry & AIP", level: 88 },
+    { name: "C3.ai", level: 82 },
+    { name: "Google Cloud Platform", level: 85 },
+    { name: "Docker & Kubernetes", level: 85 },
+    { name: "CI/CD & GitHub Actions", level: 85 },
   ],
   "Data Visualization & BI": [
-    { name: "Power BI", level: 90, icon: "📱" },
-    { name: "Tableau", level: 85, icon: "🎨" },
-    { name: "Streamlit & Plotly/Dash", level: 88, icon: "⚙️" },
-    { name: "Matplotlib & Seaborn", level: 85, icon: "🎭" },
+    { name: "Power BI", level: 90 },
+    { name: "Tableau", level: 85 },
+    { name: "Streamlit & Plotly/Dash", level: 88 },
+    { name: "Matplotlib & Seaborn", level: 85 },
   ],
 };
 
@@ -119,35 +166,42 @@ export default function Skills() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {skillList.map((skill, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.4, delay: index * 0.05 }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
-                        className="flex flex-col items-center gap-3 p-4 rounded-lg border border-primary/10 bg-primary/2 hover:bg-primary/5 transition-all duration-300 group cursor-pointer"
-                      >
-                        <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                          {skill.icon}
-                        </div>
-                        <CircularProgress level={skill.level} />
-                        <p className="text-center text-sm font-medium leading-tight line-clamp-2">
-                          {skill.name}
-                        </p>
-                        <Badge 
-                          variant="outline" 
-                          className={`text-xs ${
-                            skill.level >= 90 ? "border-primary bg-primary/10" :
-                            skill.level >= 85 ? "border-primary/70 bg-primary/5" :
-                            "border-primary/50"
-                          }`}
+                    {skillList.map((skill, index) => {
+                      const IconComponent = skillIcons[skill.name];
+                      return (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.4, delay: index * 0.05 }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.05 }}
+                          className="flex flex-col items-center gap-3 p-4 rounded-lg border border-primary/10 bg-primary/2 hover:bg-primary/5 transition-all duration-300 group cursor-pointer"
                         >
-                          {skill.level >= 90 ? "Expert" : skill.level >= 85 ? "Advanced" : "Proficient"}
-                        </Badge>
-                      </motion.div>
-                    ))}
+                          <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-all duration-300">
+                            {IconComponent ? (
+                              <IconComponent className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                            ) : (
+                              <Zap className="w-6 h-6 text-primary" />
+                            )}
+                          </div>
+                          <CircularProgress level={skill.level} />
+                          <p className="text-center text-sm font-medium leading-tight line-clamp-2">
+                            {skill.name}
+                          </p>
+                          <Badge 
+                            variant="outline" 
+                            className={`text-xs ${
+                              skill.level >= 90 ? "border-primary bg-primary/10" :
+                              skill.level >= 85 ? "border-primary/70 bg-primary/5" :
+                              "border-primary/50"
+                            }`}
+                          >
+                            {skill.level >= 90 ? "Expert" : skill.level >= 85 ? "Advanced" : "Proficient"}
+                          </Badge>
+                        </motion.div>
+                      );
+                    })}
                   </div>
                 </CardContent>
               </Card>
