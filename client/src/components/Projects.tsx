@@ -40,7 +40,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-24 bg-primary/5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,11 @@ export default function Projects() {
         viewport={{ once: true }}
         className="container mx-auto px-4"
       >
-        <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          <span className="bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
+            Featured Projects
+          </span>
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (

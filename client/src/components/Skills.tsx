@@ -40,7 +40,7 @@ const skills = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24 bg-gradient-to-b from-transparent via-primary/2 to-transparent">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -73,7 +73,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-24 bg-primary/5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,11 @@ export default function Experience() {
         viewport={{ once: true }}
         className="container mx-auto px-4"
       >
-        <h2 className="text-3xl font-bold mb-12 text-center">Professional Experience</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          <span className="bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
+            Professional Experience
+          </span>
+        </h2>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (

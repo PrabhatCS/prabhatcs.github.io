@@ -53,7 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-24 bg-gradient-to-b from-transparent via-primary/2 to-transparent">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,11 @@ export default function Contact() {
         viewport={{ once: true }}
         className="container mx-auto px-4"
       >
-        <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          <span className="bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
+            Get In Touch
+          </span>
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
           <Card>
@@ -161,7 +165,7 @@ export default function Contact() {
                 </div>
                 <Button
                   type="submit"
-                  className="w-full"
+                  className="w-full shadow-lg hover:shadow-xl transition-all"
                   disabled={form.formState.isSubmitting}
                 >
                   {form.formState.isSubmitting ? "Sending..." : "Send Message"}

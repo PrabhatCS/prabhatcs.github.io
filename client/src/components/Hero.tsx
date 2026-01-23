@@ -129,9 +129,9 @@ export default function Hero() {
                     Get In Touch
                   </a>
                 </Button>
-                <Button size="lg" asChild className="group bg-primary/10 hover:bg-primary/20 border border-primary/30">
+                <Button variant="outline" size="lg" asChild className="group border-2 border-primary hover:bg-primary/5 hover:border-primary transition-all shadow-md">
                   <a href="https://calendly.com/prabhu3437/30min" target="_blank" rel="noopener noreferrer">
-                    <svg className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     Book a Meeting
