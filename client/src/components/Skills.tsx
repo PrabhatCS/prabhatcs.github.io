@@ -3,56 +3,72 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
-// Brand Icons as SVG components
-const BrandIcons = {
-  PythonIcon: () => (
-    <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
-      <circle cx="6" cy="8" r="2"/>
-      <circle cx="18" cy="8" r="2"/>
-      <path d="M6 10c0 4 2 6 6 6s6-2 6-6"/>
-    </svg>
-  ),
-  AWSIcon: () => (
+// Simple Icon components
+const IconsComponent = {
+  Brain: () => <span className="text-2xl">🧠</span>,
+  Zap: () => <span className="text-2xl">⚡</span>,
+  Database: () => <span className="text-2xl">🗄️</span>,
+  MessageSquare: () => <span className="text-2xl">💬</span>,
+  TrendingUp: () => <span className="text-2xl">📈</span>,
+  Shield: () => <span className="text-2xl">🛡️</span>,
+  Palette: () => <span className="text-2xl">🎨</span>,
+  Python: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 12.5c0-.83.67-1.5 1.5-1.5.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5c-.83 0-1.5-.67-1.5-1.5zm5-3c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm7 0c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2z"/>
+      <path d="M12.5.75C6.146.75 1.25 5.146 1.25 11.5c0 5.528 3.752 10.237 8.906 11.291v-2.25A6.252 6.252 0 1 1 18.75 11.5h2.25C21 5.146 16.354.75 12.5.75zm-4.25 4.25h3v2.25h-3zm5 0h3v2.25h-3z"/>
     </svg>
   ),
-  GCPIcon: () => (
+  Spark: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="7" cy="11" r="3.5"/>
-      <circle cx="17" cy="13" r="4"/>
-      <path d="M7 11c0-2 1.5-3.5 3.5-3.5"/>
-      <path d="M17 13c0-2.5 2-4.5 4.5-4.5"/>
+      <path d="M13 2h-2v7h2V2zm4.82 3.18l-1.41 1.41c.73.73 1.35 1.59 1.76 2.41h2.41c-.66-1.67-1.79-3.12-3.26-4.12l1.41-1.41-1.91-1.91zm-9.64 0L2.77 7.27c-1.47.99-2.6 2.45-3.26 4.12h2.41c.41-.82 1.03-1.68 1.76-2.41L4.27 7.57 2.36 5.66l1.41-1.41 1.91 1.91zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
     </svg>
   ),
-  DockerIcon: () => (
+  AWS: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3.5 8l2-1.5 2 1.5 2-1.5 2 1.5 2-1.5 2 1.5 2-1.5 1.5 1.5V10l-1.5 1.5h-14L3.5 10V8zm0 4l2-1.5 2 1.5 2-1.5 2 1.5 2-1.5 2 1.5 2-1.5 1.5 1.5v2l-1.5 1.5h-14L3.5 14v-2zm0 4l2-1.5 2 1.5 2-1.5 2 1.5 2-1.5 2 1.5 2-1.5 1.5 1.5v2l-1.5 1.5h-14L3.5 18v-2z"/>
+      <path d="M6.763 8c0 .69.56 1.25 1.25 1.25.69 0 1.25-.56 1.25-1.25 0-.69-.56-1.25-1.25-1.25-.69 0-1.25.56-1.25 1.25zm6 0c0 .69.56 1.25 1.25 1.25.69 0 1.25-.56 1.25-1.25 0-.69-.56-1.25-1.25-1.25-.69 0-1.25.56-1.25 1.25zm6 0c0 .69.56 1.25 1.25 1.25.69 0 1.25-.56 1.25-1.25 0-.69-.56-1.25-1.25-1.25-.69 0-1.25.56-1.25 1.25z"/>
     </svg>
   ),
-  GitHubIcon: () => (
+  GCP: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.547 2.914 1.186.092-.923.35-1.547.636-1.903-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.268.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.139 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
     </svg>
   ),
-  DatabricksIcon: () => (
+  Docker: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <rect x="3" y="4" width="4" height="4" rx="1"/>
-      <rect x="9" y="4" width="4" height="4" rx="1"/>
-      <rect x="15" y="4" width="4" height="4" rx="1"/>
-      <rect x="3" y="10" width="4" height="4" rx="1"/>
-      <rect x="9" y="10" width="4" height="4" rx="1"/>
-      <rect x="15" y="10" width="4" height="4" rx="1"/>
-      <rect x="6" y="16" width="4" height="4" rx="1"/>
-      <rect x="12" y="16" width="4" height="4" rx="1"/>
+      <path d="M18.29 7.86h-2.07v2.11h2.07V7.86zM16.22 5.71h-2.07v2.15h2.07V5.71zm-4.14 2.15h-2.08v2.11h2.08V7.86zm-2.08-2.15v2.15h2.08V5.71h-2.08zM8 5.71H5.93v2.15H8V5.71zm10.29 4.26h2.07v2.11h-2.07v-2.11zm0 4.25h2.07v-2.1h-2.07v2.1z"/>
     </svg>
   ),
-  RIcon: () => (
+  GitHub: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h8m0 2H8v12h8V6m-2 4c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
     </svg>
   ),
-  PowerBIIcon: () => (
+  Databricks: () => (
+    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="3" width="4" height="4" rx="0.5"/>
+      <rect x="9" y="3" width="4" height="4" rx="0.5"/>
+      <rect x="15" y="3" width="4" height="4" rx="0.5"/>
+      <rect x="3" y="9" width="4" height="4" rx="0.5"/>
+      <rect x="9" y="9" width="4" height="4" rx="0.5"/>
+      <rect x="15" y="9" width="4" height="4" rx="0.5"/>
+      <rect x="6" y="15" width="4" height="4" rx="0.5"/>
+      <rect x="12" y="15" width="4" height="4" rx="0.5"/>
+    </svg>
+  ),
+  Neo4j: () => (
+    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="6" cy="6" r="2.5"/>
+      <circle cx="18" cy="6" r="2.5"/>
+      <circle cx="12" cy="16" r="2.5"/>
+      <line x1="7.5" y1="7.5" x2="10.5" y2="14.5" stroke="currentColor" strokeWidth="1.5"/>
+      <line x1="16.5" y1="7.5" x2="13.5" y2="14.5" stroke="currentColor" strokeWidth="1.5"/>
+    </svg>
+  ),
+  R: () => (
+    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 3h12c1.66 0 3 1.34 3 3v12c0 1.66-1.34 3-3 3H6c-1.66 0-3-1.34-3-3V6c0-1.66 1.34-3 3-3zm6 14c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-2-8c.83 0 1.5-.67 1.5-1.5S10.83 6 10 6 8.5 6.67 8.5 7.5 9.17 9 10 9z"/>
+    </svg>
+  ),
+  PowerBI: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
       <rect x="2" y="2" width="8" height="8" rx="1"/>
       <rect x="14" y="2" width="8" height="8" rx="1"/>
@@ -60,7 +76,7 @@ const BrandIcons = {
       <rect x="14" y="14" width="8" height="8" rx="1"/>
     </svg>
   ),
-  TableauIcon: () => (
+  Tableau: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
       <rect x="2" y="2" width="5" height="5" rx="0.5"/>
       <rect x="9" y="2" width="5" height="5" rx="0.5"/>
@@ -73,56 +89,44 @@ const BrandIcons = {
       <rect x="16" y="16" width="5" height="5" rx="0.5"/>
     </svg>
   ),
-  Neo4jIcon: () => (
+  Streamlit: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="6" cy="6" r="2.5"/>
-      <circle cx="18" cy="6" r="2.5"/>
-      <circle cx="12" cy="16" r="2.5"/>
-      <line x1="7.5" y1="7.5" x2="10.5" y2="14.5" stroke="currentColor" strokeWidth="1"/>
-      <line x1="16.5" y1="7.5" x2="13.5" y2="14.5" stroke="currentColor" strokeWidth="1"/>
+      <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm-1 5h2v6h-2V9zm-3 0h2v6H8V9zm6 0h2v6h-2V9z"/>
     </svg>
   ),
-  SparkIcon: () => (
+  C3AI: () => (
     <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1m0 2c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9m0 3c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4z"/>
-    </svg>
-  ),
-  StreamlitIcon: () => (
-    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm-3 0h2v6H8zm6 0h2v6h-2z"/>
-    </svg>
-  ),
-  C3AIIcon: () => (
-    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm8 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-4 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+      <circle cx="8" cy="8" r="2"/>
+      <circle cx="16" cy="8" r="2"/>
+      <path d="M12 16c2.21 0 4-1.79 4-4"/>
     </svg>
   ),
 };
 
-const skillIcons: Record<string, any> = {
+const skillIconMap: Record<string, keyof typeof IconsComponent> = {
   "Generative AI & LLMs": "Brain",
   "Agentic Workflows (MCP, A2A)": "Zap",
-  "Multi-Agent Systems (MoE)": "CPU",
+  "Multi-Agent Systems (MoE)": "Zap",
   "RAG & Vector DBs": "Database",
   "Machine Learning & Deep Learning": "Brain",
   "NLP & Named Entity Recognition": "MessageSquare",
   "Time Series Analysis (Prophet, ARIMA)": "TrendingUp",
-  "Python": BrandIcons.PythonIcon,
-  "PySpark & Spark SQL": BrandIcons.SparkIcon,
+  "Python": "Python",
+  "PySpark & Spark SQL": "Spark",
   "SQL": "Database",
-  "R": BrandIcons.RIcon,
-  "Neo4j & Graph DBs": BrandIcons.Neo4jIcon,
-  "Git & GitHub": BrandIcons.GitHubIcon,
-  "AWS (EC2, S3, Lambda, CaaS)": BrandIcons.AWSIcon,
-  "Databricks & Delta Lake": BrandIcons.DatabricksIcon,
+  "R": "R",
+  "Neo4j & Graph DBs": "Neo4j",
+  "Git & GitHub": "GitHub",
+  "AWS (EC2, S3, Lambda, CaaS)": "AWS",
+  "Databricks & Delta Lake": "Databricks",
   "Palantir Foundry & AIP": "Shield",
-  "C3.ai": BrandIcons.C3AIIcon,
-  "Google Cloud Platform": BrandIcons.GCPIcon,
-  "Docker & Kubernetes": BrandIcons.DockerIcon,
-  "CI/CD & GitHub Actions": BrandIcons.GitHubIcon,
-  "Power BI": BrandIcons.PowerBIIcon,
-  "Tableau": BrandIcons.TableauIcon,
-  "Streamlit & Plotly/Dash": BrandIcons.StreamlitIcon,
+  "C3.ai": "C3AI",
+  "Google Cloud Platform": "GCP",
+  "Docker & Kubernetes": "Docker",
+  "CI/CD & GitHub Actions": "GitHub",
+  "Power BI": "PowerBI",
+  "Tableau": "Tableau",
+  "Streamlit & Plotly/Dash": "Streamlit",
   "Matplotlib & Seaborn": "Palette",
 };
 
@@ -165,7 +169,6 @@ const getIconEmoji = (iconName: string): string => {
   const emojiMap: Record<string, string> = {
     Brain: "🧠",
     Zap: "⚡",
-    CPU: "💻",
     Database: "🗄️",
     MessageSquare: "💬",
     TrendingUp: "📈",
@@ -257,8 +260,8 @@ export default function Skills() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {skillList.map((skill, index) => {
-                      const iconKey = skillIcons[skill.name];
-                      const isSVGComponent = typeof iconKey === 'function';
+                      const iconName = skillIconMap[skill.name];
+                      const IconComponent = iconName ? IconsComponent[iconName] : null;
                       
                       return (
                         <motion.div
@@ -270,15 +273,11 @@ export default function Skills() {
                           whileHover={{ scale: 1.05 }}
                           className="flex flex-col items-center gap-3 p-4 rounded-lg border border-primary/10 bg-primary/2 hover:bg-primary/5 transition-all duration-300 group cursor-pointer"
                         >
-                          <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-all duration-300 flex items-center justify-center">
-                            {isSVGComponent ? (
-                              <div className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                                {iconKey && iconKey()}
-                              </div>
+                          <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-all duration-300 flex items-center justify-center text-primary">
+                            {IconComponent ? (
+                              <IconComponent />
                             ) : (
-                              <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
-                                {getIconEmoji(iconKey)}
-                              </span>
+                              <span className="text-2xl">⭐</span>
                             )}
                           </div>
                           <CircularProgress level={skill.level} />
