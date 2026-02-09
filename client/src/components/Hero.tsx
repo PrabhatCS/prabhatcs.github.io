@@ -181,13 +181,13 @@ export default function Hero() {
                 {/* Image */}
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
                   <img
-                    src="/img/_MG_8333-removebg-preview.png"
+                    src="/img/profile.png"
                     alt="Prabhat Shukla"
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.onerror = null;
-                      target.src = '/img/_MG_8333-removebg-preview.png';
+                      target.src = '/img/profile.png';
                     }}
                   />
                 </div>
